@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Date Invitation 💖 For My Blossom</title>
+  <meta name="description" content="Special date invitation and itinerary for my lovely girlfriend with Powerpuff Girls theme." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;800;900&family=Righteous&display=swap" rel="stylesheet" />
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated PPG Concentric Hearts Background -->
+  <div class="ppg-background-hearts" aria-hidden="true">
+    <div class="heart-ring ring-1"></div>
+    <div class="heart-ring ring-2"></div>
+    <div class="heart-ring ring-3"></div>
+    <div class="heart-ring ring-4"></div>
+    <div class="heart-ring ring-5"></div>
+  </div>
+
+  <!-- Floating Sparkles Container -->
+  <div id="sparkles-container" aria-hidden="true"></div>
+
+  <!-- Main Wrapper -->
+  <div class="app-container">
+    
+    <!-- Hero / Romantic Date Cover Section -->
+    <header class="hero-section">
+      <!-- Decorative Floating Badges -->
+      <div class="badge-float left-badge animate-bounce-slow">
+        <span class="badge-pill">🌸 For My Prettiest Girl</span>
+      </div>
+      <div class="badge-float right-badge animate-bounce-reverse">
+        <span class="badge-pill">💜 Special Date Day</span>
+      </div>
+
+      <!-- Main Invitation Card -->
+      <div class="glass-card hero-card">
+        <div class="card-header-badge">
+          <i data-lucide="sparkles" class="icon-sparkle"></i>
+          <span>DATE INVITATION FOR YOU</span>
+          <i data-lucide="sparkles" class="icon-sparkle"></i>
+        </div>
+
+        <h1 class="main-title">
+          Special Date with My Girl!
+        </h1>
+        
+        <div class="character-trio">
+          <div class="char-pill char-pink">
+            <span class="char-emoji">💖</span>
+            <span class="char-name">My Blossom</span>
+          </div>
+          <div class="char-pill char-purple">
+            <span class="char-emoji">💌</span>
+            <span class="char-name">Date Day: 3 September</span>
+          </div>
+          <div class="char-pill char-cyan">
+            <span class="char-emoji">✨</span>
+            <span class="char-name">Sweet Moments</span>
+          </div>
+        </div>
+
+        <p class="hero-subtext">
+          Halo my bebi! Saya Aska Putra udah siapin hari spesial penuh makanan enak dan momen manis buat kita berdua di tanggal <strong class="highlight-pink">3 September</strong>. 
+          Get Ready ya! 🥰
+        </p>
+
+        <!-- Date & Countdown Banner -->
+        <div class="countdown-wrapper">
+          <div class="date-highlight-badge">
+            <i data-lucide="calendar-heart" class="icon-sm"></i>
+            <span>Kamis, 3 September • Mulai Pukul 13.00 WIB</span>
+          </div>
+          <div class="countdown-label">
+            <i data-lucide="heart" class="icon-xs"></i> Menghitung Waktu Kencan Kita:
+          </div>
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="count-box">
+              <span class="count-num" id="days">00</span>
+              <span class="count-unit">Hari</span>
+            </div>
+            <div class="count-colon">:</div>
+            <div class="count-box">
+              <span class="count-num" id="hours">00</span>
+              <span class="count-unit">Jam</span>
+            </div>
+            <div class="count-colon">:</div>
+            <div class="count-box">
+              <span class="count-num" id="minutes">00</span>
+              <span class="count-unit">Menit</span>
+            </div>
+            <div class="count-colon">:</div>
+            <div class="count-box">
+              <span class="count-num" id="seconds">00</span>
+              <span class="count-unit">Detik</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="btn-rsvp">
+            <i data-lucide="heart" class="btn-icon"></i>
+            <span>Katakan "I'm Ready!" 💖</span>
+          </button>
+          <a href="#rundown" class="btn btn-secondary">
+            <i data-lucide="map-pin" class="btn-icon"></i>
+            <span>Intip Rundown Kencan</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Rundown / Timeline Section -->
+    <section class="section-container" id="rundown">
+      <div class="section-heading">
+        <div class="tag-bubble">
+          <i data-lucide="sparkles"></i> Our Date Plan
+        </div>
+        <h2 class="section-title">✨ Rundown Kencan Kita (3 September) ✨</h2>
+        <p class="section-desc">Jadwal yang udah aku rancang spesial buat ulang tahunmu:</p>
+      </div>
+
+      <!-- Timeline Component -->
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+
+        <!-- Item 1: 13.00 Berangkat -->
+        <div class="timeline-card" data-step="1">
+          <div class="timeline-marker pink-marker">
+            <span style="font-size: 1.4rem;">🛵</span>
+          </div>
+          <div class="timeline-content card-glow-pink">
+            <div class="timeline-time-badge time-pink">
+              <i data-lucide="clock" class="icon-xs"></i> 13.00 WIB
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-header-group">
+                <h3 class="timeline-item-title">🛵 Berangkat & Jemput Naik Motor</h3>
+                <span class="status-pill status-ready">Pickup Time</span>
+              </div>
+              <p class="timeline-item-desc">
+                Aku meluncur jemput kamu tepat waktu di depan rumah. Pasang helm, siapin jaket, dan pegangan ke aku ya! 💕
+              </p>
+              <div class="timeline-tags">
+                <span class="tag"><i data-lucide="sparkles" class="icon-xxs"></i> Motoran Romantis</span>
+                <span class="tag"><i data-lucide="heart" class="icon-xxs"></i> Peluk Erat dari Belakang</span>
+                <span class="tag"><i data-lucide="smile" class="icon-xxs"></i> Helm Lucu Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: 14.00 Sampai Lokasi Pertama -->
+        <div class="timeline-card" data-step="2">
+          <div class="timeline-marker purple-marker">
+            <i data-lucide="camera"></i>
+          </div>
+          <div class="timeline-content card-glow-purple">
+            <div class="timeline-time-badge time-purple">
+              <i data-lucide="clock" class="icon-xs"></i> 14.00 WIB
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-header-group">
+                <h3 class="timeline-item-title">📍 Sampai Lokasi Pertama</h3>
+                <span class="status-pill status-fun">Fun & Photoshoot</span>
+              </div>
+              <p class="timeline-item-desc">
+                Tiba di destinasi pertama! Waktunya jalan-jalan! 📸✨
+              </p>
+              <div class="timeline-tags">
+                <span class="tag"><i data-lucide="heart" class="icon-xxs"></i> Quality Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: 16.00 Shabu Hachi -->
+        <div class="timeline-card" data-step="3">
+          <div class="timeline-marker pink-marker">
+            <i data-lucide="utensils"></i>
+          </div>
+          <div class="timeline-content card-glow-pink">
+            <div class="timeline-time-badge time-pink">
+              <i data-lucide="clock" class="icon-xs"></i> 16.00 WIB
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-header-group">
+                <h3 class="timeline-item-title">🍲 Shabu Hachi Date</h3>
+                <span class="status-pill status-food">Feast Together!</span>
+              </div>
+              <p class="timeline-item-desc">
+                Makan kenyang dan enak di <strong>Shabu Hachi</strong>! Aku yang masakin dagingnya! 🥩🍨
+              </p>
+              <div class="timeline-tags">
+                <span class="tag"><i data-lucide="flame" class="icon-xxs"></i> All You Can Eat</span>
+                <span class="tag"><i data-lucide="heart" class="icon-xxs"></i> Makan Enak Berdua</span>
+                <span class="tag"><i data-lucide="ice-cream" class="icon-xxs"></i> Sweet Treats</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: 18.00 Ngopi -->
+        <div class="timeline-card" data-step="4">
+          <div class="timeline-marker purple-marker">
+            <i data-lucide="coffee"></i>
+          </div>
+          <div class="timeline-content card-glow-purple">
+            <div class="timeline-time-badge time-purple">
+              <i data-lucide="clock" class="icon-xs"></i> 18.00 WIB
+            </div>
+            <div class="timeline-body">
+              <div class="timeline-header-group">
+                <h3 class="timeline-item-title">☕ Ngopi & Deep Talk</h3>
+                <span class="status-pill status-chill">Chill & Sweet Talk</span>
+              </div>
+              <p class="timeline-item-desc">
+                Nongkrong santai di cafe cozy saat sore/malam. Pesan kopi, ato es chocolate, atau pastry haneut. 🌙☕
+              </p>
+              <div class="timeline-tags">
+                <span class="tag"><i data-lucide="coffee" class="icon-xxs"></i> Coffee & Matcha</span>
+                <span class="tag"><i data-lucide="message-circle-heart" class="icon-xxs"></i> Deep Talk Berdua</span>
+                <span class="tag"><i data-lucide="moon" class="icon-xxs"></i> Cozy Evening</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dresscode Card -->
+    <section class="section-container">
+      <div class="glass-card dresscode-card">
+        <div class="dresscode-header">
+          <div class="icon-bubble">
+            <i data-lucide="shirt"></i>
+          </div>
+          <div>
+            <h3 class="dresscode-title">🎀 Dresscode Kencan</h3>
+            <p class="dresscode-sub">Biar kita matching!</p>
+          </div>
+        </div>
+        
+        <div class="dresscode-highlight-grid">
+          <!-- Baju Putih -->
+          <div class="dresscode-box box-white">
+            <div class="dresscode-box-icon">🤍</div>
+            <div class="dresscode-box-content">
+              <span class="dresscode-box-label">Atasan / Baju</span>
+              <h4 class="dresscode-box-val">Baju Berwarna Putih</h4>
+              <p class="dresscode-box-desc">Kaos, kemeja, blouse, atau sweater putih!</p>
+            </div>
+          </div>
+
+          <!-- Celana Bebas -->
+          <div class="dresscode-box box-comfy">
+            <div class="dresscode-box-icon">👖</div>
+            <div class="dresscode-box-content">
+              <span class="dresscode-box-label">Bawahan / Celana</span>
+              <h4 class="dresscode-box-val">Celana Bebas & Nyaman</h4>
+              <p class="dresscode-box-desc">Jeans, celana kain,yang paling bikin kamu nyaman dan percaya diri</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dresscode-tips">
+          <div class="tip-item">
+            <i data-lucide="check-circle-2" class="tip-icon"></i>
+            <span><strong>Atasan:</strong> Wajib bernuansa <strong>Putih</strong> (Bisa kaos, kemeja, crop top, atau sweater putih manis).</span>
+          </div>
+          <div class="tip-item">
+            <i data-lucide="check-circle-2" class="tip-icon"></i>
+            <span><strong>Bawahan:</strong> Bebas senyamanmu (Jeans, celana panjang, yang nyaman buat motoran).</span>
+          </div>
+          <div class="tip-item">
+            <i data-lucide="check-circle-2" class="tip-icon"></i>
+            <span><strong>Catatan Motoran:</strong> Bawa jaket omat biar gak kedinginan, helm siap! 💖🛵</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive RSVP Modal -->
+    <div class="modal-overlay" id="rsvp-modal" aria-hidden="true">
+      <div class="modal-content glass-card animate-pop-in">
+        <button class="modal-close" id="btn-close-modal" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+
+        <div class="modal-header">
+          <div class="modal-heart-icon">💖</div>
+          <h3 class="modal-title">Konfirmasi Kencan 3 September</h3>
+          <p class="modal-desc">Yuk gas ngeng</p>
+        </div>
+
+        <form id="rsvp-form" class="rsvp-form">
+          <div class="form-group">
+            <label for="guest-name">Nama Panggilan</label>
+            <input type="text" id="guest-name" value="Sayang" placeholder="Misal: Blossom Cantik" required />
+          </div>
+
+          <div class="form-group">
+            <label>Jawabanmu:</label>
+            <div class="radio-cards">
+              <label class="radio-card active">
+                <input type="radio" name="attendance" value="hadir" checked />
+                <span class="radio-card-body">
+                  <span class="radio-emoji">🥰</span>
+                  <span class="radio-text">Siap Banget!</span>
+                </span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="attendance" value="mungkin" />
+                <span class="radio-card-body">
+                  <span class="radio-emoji">💖</span>
+                  <span class="radio-text">Siap dengan Senang Hati!</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="guest-message">Pesan Manis / Request Tambahan</label>
+            <textarea id="guest-message" rows="2" placeholder="Mau request rute jalan motoran yang adem atau mau makan dessert apa?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            <i data-lucide="heart"></i>
+            <span>Kirim Jawaban ke Aku</span>
+          </button>
+        </form>
+
+        <div id="rsvp-success-message" class="rsvp-success-state" style="display: none;">
+          <div class="success-icon">🎉</div>
+          <h4 class="success-title">Yaaay! See You on September 3rd!</h4>
+          <p class="success-text" id="success-guest-text">Sampai ketemu di tanggal 3 September ya! Aku jemput jam 13.00 tepat!</p>
+          <button class="btn btn-secondary btn-full" id="btn-close-success">Tutup & Siap-siap 💖</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Audio & Share Controls -->
+    <div class="floating-controls">
+      <button class="float-btn" id="btn-sparkles" title="Letuskan Hati & Konfeti!">
+        💖
+      </button>
+      <button class="float-btn" id="btn-share" title="Kirim Link ke Ayang">
+        <i data-lucide="share-2"></i>
+      </button>
+      <button class="float-btn" id="btn-top" title="Kembali ke atas">
+        <i data-lucide="arrow-up"></i>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-heart">💗 💜 💗</div>
+      <p class="footer-text">
+        Made with Love for My Prettiest Girl 💖<br />
+        3 September 2026
+      </p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
