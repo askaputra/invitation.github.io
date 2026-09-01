@@ -39,9 +39,14 @@ function createFloatingPhotos() {
   const container = document.getElementById('floating-photos-container');
   if (!container) return;
 
-  const photoSources = ['assets/photo1.png', 'assets/photo2.png', 'assets/photo3.png'];
-  const badges = ['💖', '✨', '🌸', '💜', '🎀', '🥰'];
-  const count = 5; // Reduced frequency so it stays subtle and uncluttered
+  const photoSources = [
+    'assets/photo1.png',
+    'assets/photo2.png',
+    'assets/photo3.png',
+    'assets/buttercup.png'
+  ];
+  const badges = ['💖', '💚', '✨', '🌸', '💜', '🎀', '🥰'];
+  const count = 6; // Calm frequency with all 4 memories & character
 
   // Strategic positions along the outer edges
   const horizontalPositions = [
@@ -49,7 +54,8 @@ function createFloatingPhotos() {
     89.0,  // Far right
     12.5,  // Mid left
     81.5,  // Mid right
-    6.0    // Far left lower
+    5.5,   // Far left lower
+    92.0   // Far right outer
   ];
 
   for (let i = 0; i < count; i++) {
@@ -79,11 +85,11 @@ function createFloatingPhotos() {
     photoEl.style.left = `${Math.min(93, Math.max(2, leftPos))}%`;
 
     // Slower, graceful floating duration (18s - 25s)
-    const duration = 18 + (i * 1.6) + Math.random() * 2;
+    const duration = 18 + (i * 1.5) + Math.random() * 2;
     photoEl.style.animationDuration = `${duration}s`;
 
-    // Staggered delays so only 2 to 3 photos appear simultaneously
-    const delay = -(i * 4.5);
+    // Staggered delays so only 2 to 3 elements appear simultaneously
+    const delay = -(i * 3.8);
     photoEl.style.animationDelay = `${delay}s`;
 
     container.appendChild(photoEl);
