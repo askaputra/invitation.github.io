@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
-  // 2. Generate Floating Sparkles & Hearts
+  // 2. Generate Floating Sparkles & Continuous Bottom-to-Top Floating Photos
   createFloatingSparkles();
+  createFloatingPhotos();
 
   // 3. Live Countdown Timer Setup for 3 September at 13:00 WIB
   setupCountdown();
@@ -30,6 +31,64 @@ document.addEventListener('DOMContentLoaded', () => {
     firePpgConfetti();
   }, 600);
 });
+
+/* =========================================================
+   CONTINUOUS BOTTOM-TO-TOP FLOATING PHOTOS GENERATOR
+   ========================================================= */
+function createFloatingPhotos() {
+  const container = document.getElementById('floating-photos-container');
+  if (!container) return;
+
+  const photoSources = ['assets/photo1.png', 'assets/photo2.png', 'assets/photo3.png'];
+  const badges = ['💖', '✨', '🌸', '💜', '🎀', '🥰'];
+  const count = 5; // Reduced frequency so it stays subtle and uncluttered
+
+  // Strategic positions along the outer edges
+  const horizontalPositions = [
+    3.5,   // Far left
+    89.0,  // Far right
+    12.5,  // Mid left
+    81.5,  // Mid right
+    6.0    // Far left lower
+  ];
+
+  for (let i = 0; i < count; i++) {
+    const photoEl = document.createElement('div');
+    photoEl.className = 'floating-up-photo';
+
+    const card = document.createElement('div');
+    card.className = 'photo-bubble-card';
+
+    const img = document.createElement('img');
+    img.src = photoSources[i % photoSources.length];
+    img.alt = `Cute floating memory ${i + 1}`;
+    img.className = 'photo-bubble-img';
+    img.loading = 'lazy';
+
+    const badge = document.createElement('span');
+    badge.className = 'photo-bubble-badge';
+    badge.textContent = badges[i % badges.length];
+
+    card.appendChild(img);
+    card.appendChild(badge);
+    photoEl.appendChild(card);
+
+    // Spread horizontally along edges with subtle variation
+    const basePos = horizontalPositions[i % horizontalPositions.length];
+    const leftPos = basePos + (Math.random() * 2 - 1);
+    photoEl.style.left = `${Math.min(93, Math.max(2, leftPos))}%`;
+
+    // Slower, graceful floating duration (18s - 25s)
+    const duration = 18 + (i * 1.6) + Math.random() * 2;
+    photoEl.style.animationDuration = `${duration}s`;
+
+    // Staggered delays so only 2 to 3 photos appear simultaneously
+    const delay = -(i * 4.5);
+    photoEl.style.animationDelay = `${delay}s`;
+
+    container.appendChild(photoEl);
+  }
+}
 
 /* =========================================================
    FLOATING SPARKLES & HEARTS GENERATOR
